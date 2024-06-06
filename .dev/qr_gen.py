@@ -10,7 +10,7 @@ def main():
     with open('hugo.yaml', 'r') as f:
         data = yaml.safe_load(f)
         for lang in data['languages']:
-            url = urllib.parse.urljoin(data['baseURL'], lang)
+            url = urllib.parse.urljoin(data['baseURL'], lang + "/")
             qrcode.make(
                 url,
                 image_factory=qrcode.image.svg.SvgImage,
