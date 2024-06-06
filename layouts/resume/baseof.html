@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Resume site{{ if .Site.Params.name }} of {{ .Site.Params.name }}{{ end }}">
+    <meta name="darkreader-lock">
+    <meta name="author" value="{{ .Site.Params.name }}">
+    <meta name="description" content="Resume site{{ if .Site.Params.name }} of {{ .Site.Params.name }}{{ end }}. It contains information about my job experience, skills and knowladge.">
     <title>{{ printf "%s | %s" .Title site.Title }}</title>
 
     {{- block "head" . -}}{{ end }} 
