@@ -1,18 +1,35 @@
-css:
-	@echo "Generating css file"
-	tailwindcss -i ./assets/css/input.css -o ./assets/css/resume.css
+build: build-tailwindcss gen-qrcode build-hugo
 
-css-dev:
-	tailwindcss -i ./assets/css/input.css -o ./assets/css/resume.css --watch
+build-tailwindcss:
+	@echo "-> Installing tailwindcss"
+	npm install -g tailwindcss@3.4.4
+	@echo "-> Generating css file"
+	npx tailwindcss \
+		-c .dev/tailwind.config.js \
+		-i .dev/input.css \
+		-o assets/css/resume.css \
+		--minify
 
 gen-qrcode:
-	@echo "Generating QR Codes"
-	python3 -m pip install -r .bin/requirements.txt
-	python3 .bin/qr_gen.py
+	@echo "-> Installing required python packages"
+	python3 -m pip install -r .dev/requirements.txt
+	@echo "-> Generating QR Codes"
+	python3 .dev/qr_gen.py
+
+build-hugo:
+	@echo "-> Building site"
+	hugo --gc --minify
+
+# dev section - below
+
+css-dev:
+	npx tailwindcss \
+		-c .dev/tailwind.config.js \
+		-i .dev/input.css \
+		-o assets/css/resume.css \
+		--watch
 
 serve-py:
-	@echo build site
-	hugo
 	@echo serve with python
 	python3 -m http.server -d public 80
 
@@ -21,3 +38,4 @@ crop-img:
 	
 start:
 	nix-shell -p hugo tailwindcss go --command zsh
+

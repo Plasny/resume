@@ -37,7 +37,7 @@
             {{- if or .description .attachments}}
             <div 
                 class="
-                    mt-2 py-2 px-4 text-sm w-full duration-500 transition-colors bg-neutral-100 dark:bg-neutral-900 rounded select-none
+                    mt-2 py-2 px-4 text-sm w-full duration-300 transition-colors bg-neutral-100 dark:bg-neutral-900 rounded select-none
                     {{- if not .description }} print:hidden{{- end }}
                 "
             >
@@ -47,7 +47,7 @@
 
                 {{- if .attachments }}
                 {{ if .description }}
-                <hr class="print:hidden transition-colors duration-500 my-2 border-black dark:border-white">
+                <hr class="print:hidden transition-colors duration-300 my-2 border-neutral-900 dark:border-neutral-100">
                 {{ end }}
                 <h3 class="print:hidden mb-2">{{ lang.Translate "attachments" }}</h3>
                 <div class="flex print:hidden gap-2 flex-wrap">
@@ -55,7 +55,7 @@
                     <a 
                         href="{{ .link }}"
                         target="_blank"
-                        class="w-max border rounded p-1 px-2 border-black dark:border-neutral-200 transition-colors duration-300 hover:bg-neutral-900 hover:text-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-neutral-900"
+                        class="btn w-max border rounded p-1 px-2 border-neutral-900 dark:border-neutral-100 transition-colors duration-300 hover:bg-neutral-900 hover:text-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-neutral-900"
                     >
                         {{- if .icon }}
                             {{ $ctx_attachment := dict

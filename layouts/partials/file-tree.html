@@ -12,7 +12,7 @@
 
     {{- if .IsDir }}
     <li>
-        <details class="duration-1000 transition-all" 
+        <details
             {{- if (eq $.path $.root) }} open{{- end -}}
         >
             <summary class="cursor-pointer">

@@ -27,7 +27,7 @@
     </div>
     {{- end -}}
 
-    <div class="duration-500 transition-colors h-48 print:h-32 -mb-36 print:-mb-24 bg-neutral-100 dark:bg-neutral-900"></div>
+    <div class="duration-300 transition-colors h-48 print:h-32 -mb-36 print:-mb-24 bg-neutral-100 dark:bg-neutral-900"></div>
     <img src="/{{ default "resume-picture.jpg" .Site.Params.picture }}" class="mx-auto h-48 w-48 print:h-32 print:w-32 rounded-full object-top object-cover" alt="Portrait picture of {{ $.Site.Params.name }}">
     <div class="w-full">
         <h1 class="text-center font-sans text-4xl print:text-3xl my-4 select-text">
@@ -35,7 +35,7 @@
         </h1>
 
         {{- if .Content }}
-        <div class="duration-500 transition-colors mx-5 sm:mx-[3.75rem] py-2 px-4 text-sm bg-neutral-100 dark:bg-neutral-900 rounded select-none markdown">
+        <div class="duration-300 transition-colors mx-5 sm:mx-[3.75rem] py-2 px-4 text-sm bg-neutral-100 dark:bg-neutral-900 rounded select-none markdown">
             {{ .Content | partial "shortwords.html" | safeHTML }} 
         </div>
         {{- end }}
