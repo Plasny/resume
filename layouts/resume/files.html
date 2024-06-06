@@ -19,6 +19,7 @@
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 300ms;
         vertical-align: middle;
+        margin-right: 0.25rem;
         content: url("data:image/svg+xml; utf8,{{- partial "icons/icon" $dir_icon_c -}}");
     }
     details[open] > summary::before {
@@ -26,7 +27,7 @@
     }
     @media (prefers-color-scheme: dark) {
         details > summary::before {
-            filter: invert(1);
+            filter: invert(1) brightness(0.9)
         }
     }
 </style>

@@ -17,22 +17,11 @@
             }}
             {{- partial "icons/icon" $ctx }}
             {{- if .time }}
-            <span class="font-medium align-middle">{{ .time | markdownify }} &ndash; </span>
+            <span class="font-medium align-middle md-title">{{ .time | markdownify }}</span> &ndash; 
             {{- end }}
-
-            {{- if .link }}
-            <a 
-                href="{{ .link }}" 
-                target="_blank"
-                class="align-middle underline underline-offset-2 print:no-underline"
-            >
-                {{- htmlUnescape (partial "shortwords.html" .name) | markdownify }}
-            </a>
-            {{- else }}
-            <span class="select-text align-middle">
-                {{- htmlUnescape (partial "shortwords.html" .name) | markdownify }}
+            <span class="select-text align-middle md-title">
+                {{- .name | partial "shortwords.html" | markdownify -}}
             </span>
-            {{- end }}
 
             {{- if or .description .attachments}}
             <div 
@@ -58,13 +47,13 @@
                         class="btn w-max border rounded p-1 px-2 border-neutral-900 dark:border-neutral-100 transition-colors duration-300 hover:bg-neutral-900 hover:text-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-neutral-900"
                     >
                         {{- if .icon }}
-                            {{ $ctx_attachment := dict
+                            {{- $ctx_attachment := dict
                                 "vendor" (default "fas" .icon_type)
                                 "name" .icon
-                            }}
-                            {{- partial "icons/icon" $ctx_attachment }}
+                            -}}
+                            {{- partial "icons/icon" $ctx_attachment -}}
                         {{- else }}
-                            {{- partial "icons/icon" $ctx_default_attachment }}
+                            {{- partial "icons/icon" $ctx_default_attachment -}}
                         {{- end }}
                         <span class="align-middle">{{ .name | markdownify }}</span>
                     </a>
