@@ -20,22 +20,19 @@ params:
         hostingiem o 88%.
 
     - time: grudzień 2022
-      name: Praktykant -- ZeroDowntime
-      link: https://zdt.io
+      name: Praktykant -- [ZeroDowntime](https://zdt.io)
       description: >
         Napisanie terraformowego modułu do automatyzacji zarządzania
         użytkownikami na platformie AWS w otwarto-źródłowym projekcie OPSd-io.
 
     - time: maj 2022
-      name: Praktykant -- Cisco
-      link: https://www.cisco.com
+      name: Praktykant -- [Cisco](https://www.cisco.com)
       description: >
         Zapoznanie się z technologiami Cisco. Przejście szkolenia
         wprowadzającego do CCNA.
 
     - time: sierpień 2021--maj 2022
-      name: Stażysta -- ZeroDowntime
-      link: https://zdt.io
+      name: Stażysta -- [ZeroDowntime](https://zdt.io)
       description: >
         Konfiguracja sieci i serwera NAS. Napisanie narzędzia do w pełni
         zautomatyzowanej instalacji i konfiguracji systemu Linux po sieci.
@@ -109,12 +106,14 @@ params:
     icon: graduation-cap
     contents:
     - time: od 2024
-      name: Cyberbezpieczeństwo -- Akademia Górniczo--Hutnicza im. Stanisława Staszica w Krakowie
-      link: https://agh.edu.pl/
+      name: > 
+        Cyberbezpieczeństwo --
+         [Akademia Górniczo--Hutnicza im. Stanisława Staszica w Krakowie](https://agh.edu.pl/)
 
     - time: 2019--2024
-      name: Technik Informatyk -- Zespół Szkół Łączności im. Obrońców Poczty Polskiej w Gdańsku w Krakowie
-      link: https://tl.krakow.pl/
+      name: >
+        Technik Informatyk --
+         [Zespół Szkół Łączności im. Obrońców Poczty Polskiej w Gdańsku w Krakowie](https://tl.krakow.pl/)
       description: |
         Opanowanie umiejętności i zdobycie wiedzy z zakresu:
           - tworzenia i administrowania aplikacji internetowych
@@ -154,7 +153,7 @@ params:
   small_lists:
   - title: certyfications
     contents: |
-      - C1 Advanced -- Score 200 (Cambridge English: Advanced)
+      - [C1 Advanced -- Score 200 (Cambridge English: Advanced)](/certs/cae.pdf)
       - [Cisco Certified Network Associate (CCNA)](https://www.credly.com/badges/868aff0c-dac4-4349-88f8-50447dfa36e3/public_url)
       - Prawo jazdy kat. B
       - INF.03. Tworzenie i administrowanie stronami i aplikacjami
@@ -173,12 +172,21 @@ params:
     contents: |
       - angielski na poziomie zaawansowany
       - aplikacje serwerowe: Golang; Java (SpringBoot, Spark); Node.js (Express); Python (Flask)
-      - aplikacje webowe: HTML; CSS (tailwind); JavaScript/TypeScript (React)
+      - aplikacje webowe: HTML; CSS (tailwindcss); JavaScript/TypeScript (React)
       - aplikacje mobilne: React Native; Kotlin
       - bazy danych: SQL (Postrgresql, MySQL)
       - automatyzacja, devops: Ansible, Terraform, Shell Scripts, Makefiles, Nix
-      - praca zespołowa i zarządzanie małym zespołem
+      - samodzielność w wykonywaniu zadań i branie za nie odpowiedzialności
+      - praca zespołowa i umiejętność zarządzanie małym zespołem
+      - szybkość w zdobywaniu nowych umiejętności
       - wystąpienia publiczne
+
+  - title: interests 
+    contents: |
+      - żeglowanie
+      - wspinaczka górska
+      - muzyka harfowa i handpanowa
+      - zagadnienia psychologiczne i informatyczne
  
 ---
 
