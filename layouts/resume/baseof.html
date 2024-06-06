@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Resume site{{ if .Site.Params.name }} of {{ .Site.Params.name }}{{ end }}">
+    <title>{{ printf "%s | %s" .Title site.Title }}</title>
+
+    {{- block "head" . -}}{{ end }} 
+    {{- with resources.Get "css/resume.css" }}
+      {{- if eq hugo.Environment "development" }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+      {{- else }}
+        {{- with . | minify | fingerprint }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        {{- end }}
+      {{- end }}
+    {{- end }}
+</head>
+
+<body class="select-none dark:bg-black dark:text-neutral-200 duration-500 transition-colors">
+    <nav class="print:hidden">
+        <ul class="duration-500 transition-colors bg-neutral-100 border-neutral-100 dark:bg-neutral-800 dark:border-neutral-800 border border-t-0 fixed w-fit right-2 flex gap-2 px-2 py-1 rounded-b">
+            {{- range .AllTranslations }}
+            {{- if (ne $.Page.Language.Lang .Lang) }}
+            <li><a href="{{ .RelPermalink }}" hreflang="{{ .Language.LanguageCode }}">{{ .Language.LanguageName }}</a></li>
+            {{- end }}
+            {{- end }}
+        </ul>
+    </nav>
+
+    <main class="duration-500 transition-colors bg-white dark:bg-black max-w-4xl mx-auto min-h-lvh border-x-neutral-100 dark:border-x-neutral-800 border border-y-0">
+      {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="print:hidden duration-500 transition-colors bg-white dark:bg-black max-w-4xl mx-auto border-x-neutral-100 dark:border-x-neutral-800 border-t-black dark:border-t-white border border-b-0 text-center text-sm py-2">
+        {{- partial "contact.html" .Site.Params.contact -}}
+        {{- partial "footer.html" -}}
+    </footer>
+</body>
+</html>

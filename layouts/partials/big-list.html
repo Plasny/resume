@@ -1,0 +1,79 @@
+<div>
+    {{ $ctx_default_attachment := dict
+        "vendor" "fas" 
+        "name" "file"
+    }}
+    {{ $ctx := dict
+        "vendor" (default "fas" .icon_type)
+        "name" (default "circle" .icon)
+    }}
+    <h2 class="text-2xl break-after-avoid">{{ lang.Translate .title }}</h2>
+    <ul class="sm:mx-4">
+        {{ range .contents }}
+        <li class="break-inside-avoid mt-3 first:mt-2">
+            {{- $ctx := dict
+                "vendor" (default "fas" .icon_type)
+                "name" (default "circle" (default $.icon .icon))
+            }}
+            {{- partial "icons/icon" $ctx }}
+            {{- if .time }}
+            <span class="font-medium align-middle">{{ .time | markdownify }} &ndash; </span>
+            {{- end }}
+
+            {{- if .link }}
+            <a 
+                href="{{ .link }}" 
+                target="_blank"
+                class="align-middle underline underline-offset-2 print:no-underline"
+            >
+                {{- htmlUnescape (partial "shortwords.html" .name) | markdownify }}
+            </a>
+            {{- else }}
+            <span class="select-text align-middle">
+                {{- htmlUnescape (partial "shortwords.html" .name) | markdownify }}
+            </span>
+            {{- end }}
+
+            {{- if or .description .attachments}}
+            <div 
+                class="
+                    mt-2 py-2 px-4 text-sm w-full duration-500 transition-colors bg-neutral-100 dark:bg-neutral-900 rounded select-none
+                    {{- if not .description }} print:hidden{{- end }}
+                "
+            >
+                <div class="markdown">
+                {{- .description | partial "shortwords.html" | markdownify }}
+                </div>
+
+                {{- if .attachments }}
+                {{ if .description }}
+                <hr class="print:hidden transition-colors duration-500 my-2 border-black dark:border-white">
+                {{ end }}
+                <h3 class="print:hidden mb-2">{{ lang.Translate "attachments" }}</h3>
+                <div class="flex print:hidden gap-2 flex-wrap">
+                {{- range .attachments }}
+                    <a 
+                        href="{{ .link }}"
+                        target="_blank"
+                        class="w-max border rounded p-1 px-2 border-black dark:border-neutral-200 transition-colors duration-300 hover:bg-neutral-900 hover:text-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-neutral-900"
+                    >
+                        {{- if .icon }}
+                            {{ $ctx_attachment := dict
+                                "vendor" (default "fas" .icon_type)
+                                "name" .icon
+                            }}
+                            {{- partial "icons/icon" $ctx_attachment }}
+                        {{- else }}
+                            {{- partial "icons/icon" $ctx_default_attachment }}
+                        {{- end }}
+                        <span class="align-middle">{{ .name | markdownify }}</span>
+                    </a>
+                {{- end }}
+                </div>
+                {{- end }}
+            </div>
+            {{- end }}
+        </li>
+        {{ end }}
+    </ul>
+</div>

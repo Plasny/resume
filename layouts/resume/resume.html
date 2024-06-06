@@ -1,0 +1,59 @@
+{{ define "main" }}
+    {{- $linkCtx := dict
+        "vendor" "fas" 
+        "name" "arrow-up-right-from-square"
+        "size" "0.75rem"
+        "className" "print:hidden"
+    -}}
+    {{- $ctx_default_attachment := dict
+        "vendor" "fas" 
+        "name" "file"
+    -}}
+    <div class="hidden print:block absolute top-8 left-8">
+        <ul>
+            <li>{{ .Site.Params.city }}</li>
+            {{- range (collections.Where .Site.Params.contact ".name" "like" "Email") -}}
+            <li>{{ .value }}</li>
+            {{- end -}}
+            {{- range (collections.Where .Site.Params.contact ".name" "like" "Linkedin") -}}
+            <li>{{ .link }}</li>
+            {{- end -}}
+        </ul>
+    </div>
+    {{- with resources.Get (printf "qr_code.%s.svg" .Language.Lang) -}}
+    <div class="hidden print:block h-20 absolute top-8 right-8">
+        <img class="mx-auto h-4/5" src="{{ .RelPermalink }}" alt="QR Code with url of this website">
+        <a class="text-sm" href="{{ $.Permalink }}">{{ (urls.Parse $.Site.BaseURL).Host }}{{ $.RelPermalink }}</a>
+    </div>
+    {{- end -}}
+
+    <div class="duration-500 transition-colors h-48 print:h-32 -mb-36 print:-mb-24 bg-neutral-100 dark:bg-neutral-900"></div>
+    <img src="/{{ default "resume-picture.jpg" .Site.Params.picture }}" class="mx-auto h-48 w-48 print:h-32 print:w-32 rounded-full object-top object-cover" alt="Portrait picture of {{ $.Site.Params.name }}">
+    <div class="w-full">
+        <h1 class="text-center font-sans text-4xl print:text-3xl my-4 select-text">
+            {{ .Site.Params.name }}
+        </h1>
+
+        {{- if .Content }}
+        <div class="duration-500 transition-colors mx-5 sm:mx-[3.75rem] py-2 px-4 text-sm bg-neutral-100 dark:bg-neutral-900 rounded select-none markdown">
+            {{ .Content | partial "shortwords.html" | safeHTML }} 
+        </div>
+        {{- end }}
+    </div>
+
+    <div class="sm:flex *:mx-5 *:sm:mx-10 pt-4">
+        <div class="sm:flex-[5] *:mb-5">
+            {{ range .Params.big_lists }}
+                {{ partial "big-list.html" . }}
+            {{ end }}
+        </div>
+
+        <div class="sm:flex-[2] *:sm:-ml-10 *:mb-5 *:break-inside-avoid">
+            {{ range .Params.small_lists }}
+                {{ partial "small-list.html" . }}
+            {{ end }}
+        </div>
+    </div>
+
+    <div class="h-12"></div>
+{{ end }}

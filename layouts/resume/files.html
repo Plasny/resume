@@ -1,0 +1,65 @@
+{{ define "head" }}
+{{- $dir_icon_o := dict
+    "vendor" "fas"
+    "name" "folder-open"
+-}}
+{{- $dir_icon_c := dict
+    "vendor" "fas"
+    "name" "folder"
+-}}
+<style>
+    details > summary {
+        list-style: none;
+    }
+    details > summary::before {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 500ms;
+        content: url("data:image/svg+xml; utf8,{{- partial "icons/icon" $dir_icon_c -}}");
+    }
+    details[open] > summary::before {
+        content: url("data:image/svg+xml; utf8,{{- partial "icons/icon" $dir_icon_o -}}");
+    }
+    @media (prefers-color-scheme: dark) {
+        details > summary::before {
+            filter: invert(1);
+        }
+    }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div class="pt-2 mx-5 sm:mx-[3.75rem] *:my-4 *:py-2 *:px-4 *:bg-neutral-100 *:dark:bg-neutral-900 *:rounded *:duration-500 *:transition-colors">
+    {{- if .Content -}}
+    <div class="select-none markdown">
+        {{- $ctx := dict
+            "vendor" "fas"
+            "name" "lightbulb"
+            "className" "!mr-2"
+        -}}
+        <h2 class="text-xl">{{- partial "icons/icon" $ctx -}}
+            <span class="align-middle">{{ lang.Translate "about_this" }}</span></h2>
+        <hr class="my-2 border-neutral-900 dark:border-neutral-100 transition-colors duration-500">
+        {{ .Content | partial "shortwords.html" | safeHTML }}
+    </div>
+    {{- end -}}
+    
+    <div>
+        {{- $ctx := dict
+            "vendor" "fas"
+            "name" "folder-tree"
+            "className" "!mr-2"
+        -}}
+        <h2 class="text-xl">{{- partial "icons/icon" $ctx -}}
+            <span class="align-middle">{{ lang.Translate "files" }}</span></h2>
+        <hr class="my-2 border-neutral-900 dark:border-neutral-100 transition-colors duration-500">
+        <ul class="font-mono">
+        {{ partial "file-tree.html" (dict
+            "path" (path.Join "content" .Page.File.Dir) 
+            "root" (path.Join "content" .Page.File.Dir) 
+            "pageRes" .Resources
+        )}}
+        </ul>
+    </div>
+</div>
+{{ end }}

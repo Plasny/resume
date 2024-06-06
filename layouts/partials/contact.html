@@ -1,0 +1,29 @@
+<div class="px-4 py-2 mx-5 sm:w-fit sm:mx-auto my-4 rounded bg-neutral-100 dark:bg-neutral-800">
+    {{- $ctx := dict
+        "vendor" "fas"
+        "name" "address-card"
+        "className" "!mr-2"
+    -}}
+    <h2 class="mb-2 text-lg"><span class="align-middle">{{ lang.Translate "contact_info" }}</span></h2>
+    <hr class="my-2 border-neutral-900 dark:border-neutral-100">
+    <ul class="w-fit sm:columns-3 mx-auto gap-8">
+    {{- range . -}}
+        {{- $icon := dict
+            "vendor" (default "fas" .icon_type)
+            "name" (default "circle" .icon)
+        -}}
+        <li class="px-2 text-left mb-2 sm:mb-1">
+            {{- if .link -}}
+            <a href="{{ .link }}" target="_blank">{{ partial "icons/icon" $icon }}
+                <span class="align-middle underline underline-offset-2">{{ .value }}</span>
+            </a>
+            {{- else -}}
+            {{ partial "icons/icon" $icon }}
+            <span class="align-middle">
+                {{ .value }}
+            </span>
+            {{- end -}}
+        </li>
+    {{- end -}}
+    </ul>
+</div>

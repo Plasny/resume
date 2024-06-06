@@ -1,0 +1,7 @@
+{{- $text := . -}}
+{{- $shortWords := slice " a " " i " " o " " u " " w " " z " -}}
+{{- range $shortWords -}}
+  {{- $text = replace $text . (printf " %s&nbsp;" (trim . " \n")) -}}
+{{- end -}}
+{{- return $text -}}
+

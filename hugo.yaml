@@ -1,0 +1,42 @@
+baseURL: https://cv.plasny.one/
+title: Paweł Pasternak
+module:
+  imports:
+  - path: github.com/hugomods/icons/vendors/font-awesome
+languages:
+  en:
+    languageName: English
+  pl: 
+    languageName: Polish
+params:
+  name: Paweł Pasternak
+  picture: resume-picture.webp
+  city: Kraków, Małopolska
+  contact:
+  - name: Email
+    icon: envelope
+    value: ppasternak@plasny.one
+    link: mailto:ppasternak@plasny.one
+  - name: PGP Public Key
+    icon: key
+    value: PGP Public Key
+    link: /4E9AD1D7BE91ADA11F9507217392FB56B459B484-public.asc
+  - name: Linkedin profile
+    icon_type: fab
+    icon: linkedin
+    value: pppasternak 
+    link: https://linkedin.com/in/pppasternak
+  - name: Website with resume
+    icon: link
+    value: cv.plasny.one
+    link: https://cv.plasny.one
+  - name: Github profile
+    icon_type: fab
+    icon: square-github
+    value: Plasny
+    link: https://github.com/Plasny
+  - name: Gitlab profile
+    icon_type: fab
+    icon: square-gitlab
+    value: Plasny
+    link: https://gitlab.com/Plasny

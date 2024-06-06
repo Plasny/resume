@@ -1,0 +1,45 @@
+{{- $file_icon := dict
+    "vendor" "fas"
+    "name" "file"
+-}}
+{{- $pdf_icon := dict
+    "vendor" "fas"
+    "name" "file-pdf"
+-}}
+{{- range (collections.Reverse (os.ReadDir .path)) -}}
+    {{- $path := path.Join $.path .Name -}}
+    {{- $relPath := strings.Replace $path $.root "" -}}
+
+    {{- if .IsDir }}
+    <li>
+        <details class="duration-1000 transition-all" 
+            {{- if (eq $.path $.root) }} open{{- end -}}
+        >
+            <summary class="cursor-pointer">
+                <span class="align-middle">{{ .Name }}</span>
+            </summary>
+            <ul class="*:ml-5">
+            {{- partial "file-tree.html" (dict 
+                "path" $path 
+                "root" $.root
+                "pageRes" $.pageRes
+            ) -}}
+            </ul>
+        </details>
+    </li>
+    {{- else }}
+        {{- if not (and (strings.HasPrefix .Name "_index.") (strings.HasSuffix .Name ".md")) -}}
+        {{- $res := $.pageRes.Get $relPath -}}
+        {{ if $res }}
+        <li><a href="{{ $res.Permalink }}" target="_blank" class="align-middle">
+                {{- if (eq (path.Ext $path) ".pdf") -}}
+                    {{- partial "icons/icon" $pdf_icon -}}
+                {{- else -}}
+                    {{- partial "icons/icon" $file_icon -}}
+                {{- end -}}
+                {{- .Name -}}
+        </a></li>
+        {{- end -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
