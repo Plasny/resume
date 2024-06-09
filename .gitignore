@@ -2,3 +2,4 @@ public
 assets/css/resume.css
 assets/qr_code.*.svg
 .hugo_build.lock
+themes

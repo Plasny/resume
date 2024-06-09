@@ -1,14 +1,4 @@
 {{ define "main" }}
-    {{- $linkCtx := dict
-        "vendor" "fas" 
-        "name" "arrow-up-right-from-square"
-        "size" "0.75rem"
-        "className" "print:hidden"
-    -}}
-    {{- $ctx_default_attachment := dict
-        "vendor" "fas" 
-        "name" "file"
-    -}}
     <div class="hidden print:block absolute top-8 left-8">
         <ul>
             <li>{{ .Site.Params.city }}</li>

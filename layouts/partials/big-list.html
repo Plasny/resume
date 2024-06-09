@@ -7,7 +7,7 @@
         "vendor" (default "fas" .icon_type)
         "name" (default "circle" .icon)
     }}
-    <h2 class="text-2xl break-after-avoid">{{ lang.Translate .title }}</h2>
+    <h2 class="text-2xl break-after-avoid">{{ if .no_translate }}{{ .title }}{{ else }}{{ lang.Translate .title }}{{ end }}</h2>
     <ul class="sm:mx-4">
         {{ range .contents }}
         <li class="break-inside-avoid mt-3 first:mt-2">

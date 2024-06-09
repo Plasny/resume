@@ -155,7 +155,23 @@ params:
     contents: |
       - [C1 Advanced -- Score 200 (Cambridge English: Advanced)](/certs/cae.pdf)
       - [Cisco Certified Network Associate (CCNA)](https://www.credly.com/badges/868aff0c-dac4-4349-88f8-50447dfa36e3/public_url)
-      - Prawo jazdy kat. B
+
+  - title: skills
+    contents: |
+      - angielski na poziomie C2
+      - aplikacje serwerowe: Python (Flask), Golang, Java (SpringBoot, Spark), Node.js (Express)
+      - bazy danych: SQL (Postrgresql, MySQL)
+      - aplikacje webowe: HTML, CSS, JavaScript/TypeScript (React)
+      - aplikacje mobilne: React Native, Kotlin
+      - automatyzacja, devops: Ansible, Terraform, Shell Scripts, Makefiles, Nix
+      - samodzielność w wykonywaniu zadań
+      - praca zespołowa i umiejętność zarządzanie małym zespołem
+      - szybkość w zdobywaniu nowych umiejętności
+      - wystąpienia publiczne
+
+  - title: Kwalifikacje
+    no_translate: true 
+    contents: |
       - INF.03. Tworzenie i administrowanie stronami i aplikacjami
         internetowymi oraz bazami danych
       - INF.02 Administracja i eksploatacja systemów komputerowych,
@@ -168,18 +184,11 @@ params:
       - DevOps Engineer na platformie strefakursów.pl
       - Kurs Androida w ZSŁ
 
-  - title: skills
+  - title: Uprawnienia
+    no_translate: true 
     contents: |
-      - angielski na poziomie zaawansowany
-      - aplikacje serwerowe: Golang; Java (SpringBoot, Spark); Node.js (Express); Python (Flask)
-      - aplikacje webowe: HTML; CSS (tailwindcss); JavaScript/TypeScript (React)
-      - aplikacje mobilne: React Native; Kotlin
-      - bazy danych: SQL (Postrgresql, MySQL)
-      - automatyzacja, devops: Ansible, Terraform, Shell Scripts, Makefiles, Nix
-      - samodzielność w wykonywaniu zadań i branie za nie odpowiedzialności
-      - praca zespołowa i umiejętność zarządzanie małym zespołem
-      - szybkość w zdobywaniu nowych umiejętności
-      - wystąpienia publiczne
+      - Prawo jazdy kat. B
+      - SEP -- stan. EKSPLOATACJI
 
   - title: interests 
     contents: |
