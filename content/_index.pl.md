@@ -10,35 +10,33 @@ params:
   - title: work_experience
     icon: briefcase
     contents:
-    - time: od września 2023
-      name: Wolontariusz Specjalista IT -- Biuro KSM Archidiecezji Krakowskiej
+    - time: od czerwca 2024
+      name: Back-end Developer -- [Quickchannel](https://quickchannel.com)
       description: >
-        Konfiguracja serwera wirtualizacji [Proxmox VE](https://www.proxmox.com/en/proxmox-virtual-environment/overview). Ustawienie
-        [Wireguard VPN](https://www.wireguard.com/) co umożliwiło pracę zdalną
-        pracownikom biura. Przeniesienie trzech stron internetowych na serwer
-        lokalny co poskutkowało zmniejszeniem kosztów związanych z ich
-        hostingiem o 88%.
+        Rozwijanie platformy wideo napisanej w języku Python.
+
+    - time: wrzesień 2023 - maj 2024
+      name: Specjalista IT -- Biuro KSM Archidiecezji Krakowskiej
+      description: >
+        Zarządzanie serwerem [Proxmox VE](https://www.proxmox.com/en/proxmox-virtual-environment/overview),
+        przeniesienie stron internetowych, które poskutkowało ograniczeniem
+        kosztów hostingu o 88%.
 
     - time: grudzień 2022
       name: Praktykant -- [ZeroDowntime](https://zdt.io)
       description: >
-        Napisanie terraformowego modułu do automatyzacji zarządzania
-        użytkownikami na platformie AWS w otwarto-źródłowym projekcie OPSd-io.
+        Terraformowe moduły dla platformy AWS.
 
     - time: maj 2022
       name: Praktykant -- [Cisco](https://www.cisco.com)
       description: >
-        Zapoznanie się z technologiami Cisco. Przejście szkolenia
-        wprowadzającego do CCNA.
+        Technologie Cisco, CCNA bootcamp.
 
     - time: sierpień 2021--maj 2022
       name: Stażysta -- [ZeroDowntime](https://zdt.io)
       description: >
-        Konfiguracja sieci i serwera NAS. Napisanie narzędzia do w pełni
-        zautomatyzowanej instalacji i konfiguracji systemu Linux po sieci.
-        Konfiguracji trzech lokalnych instancji
-        [Openstack-a](https://www.openstack.org) z wykorzystaniem wcześniej
-        wspomnianego narzędzia.
+        Automatyzacja instalcji systemu Linux po sieci. Konfiguracja sieci.
+        Postawienie 3 instancji [Openstack-a](https://www.openstack.org).
       attachments:
         - name: Docker Netboot v2
           icon_type: fab
@@ -50,6 +48,7 @@ params:
           link: https://gitlab.com/Plasny/openstack_deployment
 
 
+    # todo: zmienić na osiągnięcia i inicjatywy, pełne zdania, krócej!!!
   - title: other_experience
     icon: laptop-code
     contents:
@@ -63,10 +62,10 @@ params:
     #   - name: Demo Site
     #     link: https://nikodemmarek.github.io/solana-coloseum-hackathon
     #     icon: link
-    - name: Ogólnopolskie Zawody Techniczne "Primus Inter Pares" (hackathon)
+    - name: Ogólnopolskie Zawody Techniczne "Primus Inter Pares"
       time: styczeń--luty 2024
       description: >
-        Napisanie backendu komunikatora tekstowego, którego użytkownicy
+        Backendu komunikatora tekstowego, którego użytkownicy
         byli uwierzytelniani z serwerem LDAP/AD. Przygotowanie bazy danych,
         infrastruktury i dokumentacji.
       attachments:
@@ -91,7 +90,7 @@ params:
       - name: Demo Video
         link: https://drive.google.com/file/d/1O5GXBSNBFFEa5k6DFuiVY1d4OO6zSXNy/view
         icon: file-video
-    - name: Motorola Science Cup (hackathon)
+    - name: Motorola Science Cup
       time: luty--marzec 2022
       description: >
         Przygotowanie repozytoriów, praca nad symulatorem bramek logicznych w
@@ -114,16 +113,6 @@ params:
       name: >
         Technik Informatyk --
          [Zespół Szkół Łączności im. Obrońców Poczty Polskiej w Gdańsku w Krakowie](https://tl.krakow.pl/)
-      description: |
-        Opanowanie umiejętności i zdobycie wiedzy z zakresu:
-          - tworzenia i administrowania aplikacji internetowych
-          - tworzenia i administrowania stronami WWW
-          - projektowania baz danych i administrowania nimi
-          - projektowania i wykonywania lokalnej sieci komputerowej
-          - konfigurowania urządzeń sieciowych, routerów, serwerów
-          - administrowania sieciowymi systemami operacyjnymi
-          - naprawy i diagnostyki usterek sprzętu komputerowego
-          - montażu oraz eksploatacji komputera i urządzeń peryferyjnych
 
       attachments:
       - name: Projekty programistyczne z lat 2022--2024
@@ -153,21 +142,18 @@ params:
   small_lists:
   - title: certyfications
     contents: |
-      - [C1 Advanced -- Score 200 (Cambridge English: Advanced)](/certs/cae.pdf)
+      - [CAE -- C1 Advanced (Cambridge English: Advanced)](/certs/cae.pdf)
       - [Cisco Certified Network Associate (CCNA)](https://www.credly.com/badges/868aff0c-dac4-4349-88f8-50447dfa36e3/public_url)
 
   - title: skills
     contents: |
-      - angielski na poziomie C2
-      - aplikacje serwerowe: Python (Flask), Golang, Java (SpringBoot, Spark), Node.js (Express)
+      - aplikacje serwerowe: Python, Golang, Java (SpringBoot, Spark), Node.js (Express)
       - bazy danych: SQL (Postrgresql, MySQL)
       - aplikacje webowe: HTML, CSS, JavaScript/TypeScript (React)
       - aplikacje mobilne: React Native, Kotlin
-      - automatyzacja, devops: Ansible, Terraform, Shell Scripts, Makefiles, Nix
-      - samodzielność w wykonywaniu zadań
-      - praca zespołowa i umiejętność zarządzanie małym zespołem
-      - szybkość w zdobywaniu nowych umiejętności
-      - wystąpienia publiczne
+      - automatyzacja, devops: Ansible, Terraform, Shell Scripts, Makefiles, Nix, Openstack
+      - samodzielność, praca zeposłowa, przemówienia publiczne
+      - angielski na poziomie C1
 
   - title: Kwalifikacje
     no_translate: true 
@@ -177,18 +163,18 @@ params:
       - INF.02 Administracja i eksploatacja systemów komputerowych,
         urządzeń peryferyjnych i lokalnych sieci komputerowych
 
-  - title: courses
-    contents: |
-      - Rust The Chain (Rust i Solana Blockchain) w ZSŁ
-      - Harvard CS50 na freeCodeCamp.org
-      - DevOps Engineer na platformie strefakursów.pl
-      - Kurs Androida w ZSŁ
+  # - title: courses
+  #   contents: |
+  #     - Rust The Chain (Rust i Solana Blockchain) w ZSŁ
+  #     - Harvard CS50 na freeCodeCamp.org
+  #     - DevOps Engineer na platformie strefakursów.pl
+  #     - Kurs Androida w ZSŁ
 
-  - title: Uprawnienia
-    no_translate: true 
-    contents: |
-      - Prawo jazdy kat. B
-      - SEP -- stan. EKSPLOATACJI
+  # - title: Uprawnienia
+  #   no_translate: true 
+  #   contents: |
+  #     - Prawo jazdy kat. B
+  #     - SEP -- stan. EKSPLOATACJI
 
   - title: interests 
     contents: |
@@ -199,6 +185,6 @@ params:
  
 ---
 
-Szukam miejsca, w którym będę mógł dalej zdobywać wiedzę i rozwijać swoje
-umiejętności tworzenia systemów, programowania i automatyzowania rozwiązań.
-
+Pasjonuję się technologią, eksperymentuję z nowymi narzędziami i szukam nowych
+wyzwań. Wierzę, że ciągły rozwój jest kluczem do sukcesu w szybko
+zmieniającym się świecie.
