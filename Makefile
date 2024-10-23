@@ -2,9 +2,9 @@ build: build-tailwindcss gen-qrcode build-hugo
 
 build-tailwindcss:
 	@echo "-> Installing tailwindcss"
-	npm install -g tailwindcss@3.4.4
+	[ $$(which tailwindcss) ] || npm install -g tailwindcss@3.4.4
 	@echo "-> Generating css file"
-	npx tailwindcss \
+	tailwindcss \
 		-c .dev/tailwind.config.js \
 		-i .dev/input.css \
 		-o assets/css/resume.css \
@@ -18,7 +18,9 @@ gen-qrcode:
 
 build-hugo:
 	@echo "-> Building site"
-	hugo --gc --minify
+	[ $$(which hugo) ] \
+		&& hugo --gc --minify\
+		|| go run github.com/gohugoio/hugo@v0.136.4 --gc --minify
 
 # dev section - below
 
